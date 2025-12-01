@@ -1,0 +1,16 @@
+*.txt
+*.exe
+*.so
+*.o
+*.out
+*.dll
+*.a
+*.dynlib
+
+bin/
+build/
+out/
+int/
+
+.vs/
+.vscode/
