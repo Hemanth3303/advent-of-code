@@ -14,14 +14,11 @@ public:
 	int x, y;
 };
 
-namespace std {
-	template <>
-	struct hash<Vec2> {
-		size_t operator()(const Vec2& v) const {
-			return std::hash<int>()(v.x) ^ (std::hash<int>()(v.y) << 1);
-		}
-	};
-}
+struct Vec2Hash {
+	size_t operator()(const Vec2& v) const {
+		return std::hash<float>()(v.x) ^ (std::hash<float>()(v.y) << 1);
+	}
+};
 
 int main() {
 	std::string fileName = "input.txt";
@@ -35,7 +32,7 @@ int main() {
 	ss << inFile.rdbuf();
 	std::string instructions = ss.str();
 
-	std::unordered_set<Vec2> gridPoistions;
+	std::unordered_set<Vec2, Vec2Hash> gridPoistions;
 
 	Vec2 santaPos{ 0, 0 };
 	Vec2 robotPos{ 0, 0 };
@@ -55,7 +52,7 @@ int main() {
 			gridPoistions.insert(santaPos);
 		}
 		robotTurn = !robotTurn;
-	};
+		};
 
 	for (const char c : instructions) {
 		switch (c)
