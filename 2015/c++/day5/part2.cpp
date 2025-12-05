@@ -17,8 +17,6 @@ int main() {
 	uint32_t niceCount = 0;
 
 	while (std::getline(inFile, line)) {
-		bool naughty = false;
-
 		// rule 2 check
 		bool hasMirror = false;
 		for (uint32_t i = 0; i < line.size() - 1; i++) {
@@ -28,7 +26,7 @@ int main() {
 			}
 		}
 		if (!hasMirror) {
-			naughty = true;
+			continue;
 		}
 
 		// rule 1 check
@@ -49,12 +47,10 @@ int main() {
 		}
 
 		if (!hasRepeatNoOverlap) {
-			naughty = true;
+			continue;
 		}
 
-		if (!naughty) {
-			niceCount++;
-		}
+		niceCount++;
 	}
 	inFile.close();
 
