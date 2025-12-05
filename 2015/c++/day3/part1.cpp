@@ -33,6 +33,7 @@ int main() {
 
 	std::stringstream ss;
 	ss << inFile.rdbuf();
+	inFile.close();
 	std::string instructions = ss.str();
 
 	std::unordered_set<Vec2> gridPoistions;

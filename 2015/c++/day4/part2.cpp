@@ -16,6 +16,7 @@ int main() {
 
 	std::stringstream ss;
 	ss << inFile.rdbuf();
+	inFile.close();
 
 	std::string input = ss.str();
 
