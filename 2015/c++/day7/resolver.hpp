@@ -19,7 +19,7 @@ uint16_t resolve(Context& ctx, const std::string& wire) {
 		return ctx.cache[wire];
 	}
 	uint16_t result = 0;
-	const Instruction& instr = ctx.instructions[wire];
+	const Instruction& instr = ctx.instructions.at(wire);
 	switch(instr.opcode) {
  		case Opcodes::None:
 			std::cerr << "Error: Instruction Missing, something went wrong\n";
