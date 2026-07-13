@@ -46,7 +46,7 @@ int32_t countChars(const std::string& line) {
 std::string encode(const std::string& line) {
 	std::string transformedLine = "";
 	size_t index = 0;
-	
+
 	transformedLine += '\"';
 
 	while(index < line.size()) {

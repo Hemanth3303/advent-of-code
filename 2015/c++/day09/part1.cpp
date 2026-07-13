@@ -80,6 +80,6 @@ int main() {
     }
     while(std::next_permutation(cityList.begin(), cityList.end()));
 
-    std::cout << "best cost: " << bestCost << "\n"; 
+    std::cout << "best cost: " << bestCost << "\n";
 	return 0;
 }
