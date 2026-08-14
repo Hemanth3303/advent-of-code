@@ -10,10 +10,8 @@ int main() {
 		return 1;
 	}
 
-	std::string line;
-	std::getline(inFile, line);
-
-	std::string resultString = line;
+	std::string resultString;
+	std::getline(inFile, resultString);
 
 	for(size_t i = 0; i < 40; i++ ) {
 		int32_t count = 0;
